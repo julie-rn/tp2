@@ -36,7 +36,6 @@ jobs:
           context: ./simple-api
 # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-devops-epf:simple-api
-
       - name: Build image and push database
 # DO the same for database
         uses: docker/build-push-action@v2
