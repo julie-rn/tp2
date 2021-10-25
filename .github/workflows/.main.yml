@@ -33,6 +33,8 @@ jobs:
     needs: build-and-test-app
 # run only when code is compiling and tests are passing
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./simple-api
 # steps to perform in job
     steps:
       - name: Checkout code
