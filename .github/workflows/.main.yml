@@ -18,4 +18,6 @@ jobs:
           distribution: 'adopt'
           cache: maven
       - name: Build and test with Maven
-        run: mvn clean verify --file simple-api/pom.xml
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=julie-rn_tp2
